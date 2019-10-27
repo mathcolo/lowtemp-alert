@@ -1,0 +1,13 @@
+[Unit]
+Description=Low Temp Service
+After=multi-user.target
+
+[Service]
+User=pi
+Restart=always
+RestartSec=600
+Type=idle
+ExecStart=/usr/bin/python3 /home/pi/lowtemp-alert/check.py
+
+[Install]
+WantedBy=multi-user.target
